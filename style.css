@@ -1,0 +1,26 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.content{
+    border: 5px solid #0b5c9e;
+    margin: 10px;
+    text-align: center;
+    height: 500px;
+}
+h1{
+    border-bottom: 4px solid #c06060;
+    max-width: 80%;
+    margin: 0 auto;
+    color: #161e30;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+}
+.drag-space{
+    margin-top: 15px;
+    height: 400px;
+}
+.item-text{
+    margin-top: 15px;
+    resize: none;
+}

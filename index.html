@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag-n-drop</title>
+    <link rel="stylesheet" href="main.css">
+    
+    
+</head>
+<body>
+    <p>Arraste a imagem para dentro do retângulo: </p>
+    <div class="container">
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img id = 'drag1' src="placeholder-9.png" alt="" draggable="true" ondragstart="drag(event)"
+        width="250" height="69">
+        </div>
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+        </div>
+        <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+        </div>
+        <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+        </div>
+
+    </div>
+    <div class="container2">
+        <div id="div11" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img id = 'drag2' src="placeholder-9.png" alt="" draggable="true" ondragstart="drag(event)"
+        width="336" height="69">
+        </div>
+        <div id="div12" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+        </div>
+        <div id="div13" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+        </div>
+        <div id="div14" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+        </div>
+
+    </div>
+    <div>
+        <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+        </div>
+        <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+        </div>
+        <div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+        </div>
+        <div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+        </div>
+
+    </div>
+    
+    
+    
+</body>
+<script src="app.js"></script>
+</html>
