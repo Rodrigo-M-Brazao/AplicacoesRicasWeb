@@ -1,0 +1,23 @@
+#div21, #div22, #div23, #div24, #div25, #div26, #div27, #div20{
+    border: 1px solid black;
+    height: 70px;
+    width: 550px;
+    /* padding: 10px; */
+    margin: 50px auto;
+    
+}
+
+
+img{
+    display: block;
+    margin: 0 auto;
+}
+#container-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.container, .container2{
+    background-color: rgb(51, 20, 51);
+    margin: 10px;
+    /* padding: 15px 10px; */
+}
