@@ -1,3 +1,6 @@
+let pesoTotal = 0;
+
+
 function allowDrop(ev){
     ev.preventDefault();
 }
@@ -15,3 +18,11 @@ function drop(ev){
     let data = ev.dataTransfer.getData('text')
     ev.target.appendChild(document.getElementById(data));
 }
+
+if(ev.target.id === 'div2'){
+    pesoTotal += parseInt(event.target.childNodes[0].getAttributes("data-peso"));
+}else if(ev.target.id === 'div1'){
+    pesoTotal -= parseInt(event.target.childNodes[0].getAttributes("data-peso"));
+}
+// Mostra o peso ae 
+document.getElementById('pesoTotal').innerHTML = `Peso total: ${pesoTotal} kg`;
