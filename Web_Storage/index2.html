@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form name="dados">
+    <p>Exemplo Web Storage</p>
+    <p id= 'painel'></p>
+    <button onclick="mostraOpcoes()">Opções</button>
+    <form name="fconf" id="fconf">
         <label for="nome">Nome</label><br>
         <input type="text" name="fnome" id="fnome" size="20"><br><br>
         <label for="bg">Cor de Fundo</label><br>
@@ -23,7 +27,17 @@
 </body>
 <script>
     var vcorFundo, vcorfonte, vnome;
-
+    function inicia(){
+        if(localStorage.nome){
+            vcorFundo = localStorage.corfundo;
+            vcorfonte = localStorage.corfonte;
+            vnome = localStorage.nome;
+            console.log(vcorFundo)
+            defineCor(1, vcorFundo);
+            defineCor(2, vcorfonte);
+            document.getElementById('painel').innerHTML = `Bem-vindo ${vnome}`;
+        }
+    }
     function defineCor(op,cor){
         if(op === 1){
             document.body.style.backgroundColor = cor;
@@ -34,11 +48,18 @@
         }
     }
     function gravar(){
+        var form = document.getElementById('fconf');
         vnome = document.getElementById('fnome').value;
         localStorage.corfundo = vcorFundo;
         localStorage.corfonte = vcorfonte;
         localStorage.nome = vnome;
+        form.style.display = 'none';
 
     }
+    function mostraOpcoes(){
+        var form = document.getElementById('fconf');
+        form.style.display = 'block';
+    }
+    window.addEventListener('load', inicia)
 </script>
 </html>
