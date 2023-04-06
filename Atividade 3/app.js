@@ -15,7 +15,8 @@ pause.addEventListener('click', function(ev){
 })
 mute.addEventListener('click', function(ev){
     ev.preventDefault();
-    video.muted = true
+
+    video.muted = !video.muted
 })
 rewind.addEventListener('click', function(ev){
     ev.preventDefault();
