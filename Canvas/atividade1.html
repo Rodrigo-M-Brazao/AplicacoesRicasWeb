@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+    <script>
+        function desenhar(){
+            var figura = document.getElementById('tela');
+            if(figura.getContext){
+                var busao = figura.getContext('2d');
+                busao.lineWidth = 5;
+                busao.strokeStyle = 'black';
+                busao.moveTo(130, 300)
+                busao.lineTo(100, 300);
+                busao.lineTo(100,200);
+                busao.lineTo(300,200);
+                busao.lineTo(300,300);
+                busao.lineTo(250,300);
+                
+                busao.stroke();
+                var retangulo = figura.getContext('2d');
+                retangulo.fillStyle = 'black';
+                retangulo.fillRect(120,220,35,40);
+                var retangulo1 = figura.getContext('2d');
+                retangulo1.fillStyle = 'black';
+                retangulo1.fillRect(170,225,90,30);
+                busao.beginPath();
+                let ctx = figura.getContext('2d');
+
+                // Desenha uma curva de Bézier quadrática
+                ctx.beginPath();
+                ctx.moveTo(130, 300); // Início da curva
+                ctx.quadraticCurveTo(150, 270, 170, 300); // Parâmetros da curva
+                ctx.stroke(); 
+                ctx.beginPath();
+                ctx.moveTo(250, 300); // Início da curva
+                ctx.quadraticCurveTo(235, 270, 215, 300); // Parâmetros da curva
+                ctx.stroke();
+                let chao = figura.getContext('2d');
+                chao.lineWidth = 5;
+                chao.strokeStyle = 'black';
+                chao.moveTo(170, 300)
+                chao.lineTo(215, 300);
+                chao.stroke();
+                let circulo1 = figura.getContext('2d');
+                circulo1.fillStyle = 'gray';
+                circulo1.beginPath();
+                circulo1.arc(150,305,15,0,2*Math.PI);
+                circulo1.fill();
+                let circulo2 = figura.getContext('2d');
+                circulo2.fillStyle = 'gray';
+                circulo2.beginPath();
+                circulo2.arc(233,305,15,0,2*Math.PI);
+                circulo2.fill(); 
+                function animarCirculo(tempo) {
+                    circulo1.clearRect(0, 0, figura.width, figura.height);
+                    var busao = figura.getContext('2d');
+                    busao.lineWidth = 5;
+                    busao.strokeStyle = 'black';
+                    busao.moveTo(130, 300)
+                    busao.lineTo(100, 300);
+                    busao.lineTo(100,200);
+                    busao.lineTo(300,200);
+                    busao.lineTo(300,300);
+                    busao.lineTo(250,300);
+                    
+                    busao.stroke();
+                    var retangulo = figura.getContext('2d');
+                    retangulo.fillStyle = 'black';
+                    retangulo.fillRect(120,220,35,40);
+                    var retangulo1 = figura.getContext('2d');
+                    retangulo1.fillStyle = 'black';
+                    retangulo1.fillRect(170,225,90,30);
+                    busao.beginPath();
+                    let ctx = figura.getContext('2d');
+
+                    // Desenha uma curva de Bézier quadrática
+                    ctx.beginPath();
+                    ctx.moveTo(130, 300); // Início da curva
+                    ctx.quadraticCurveTo(150, 270, 170, 300); // Parâmetros da curva
+                    ctx.stroke(); 
+                    ctx.beginPath();
+                    ctx.moveTo(250, 300); // Início da curva
+                    ctx.quadraticCurveTo(235, 270, 215, 300); // Parâmetros da curva
+                    ctx.stroke();
+                    let chao = figura.getContext('2d');
+                    chao.lineWidth = 5;
+                    chao.strokeStyle = 'black';
+                    chao.moveTo(170, 300)
+                    chao.lineTo(215, 300);
+                    chao.stroke();
+                    circulo1.fillStyle = "black";
+                    circulo1.beginPath();
+                    circulo1.arc(150,305, 10 + 5 * Math.sin(tempo/500), 0, 2 * Math.PI);
+                    circulo1.fill();
+                    circulo1.lineWidth = 2;
+                    // circulo1.strokeStyle = "grey"; 
+                    circulo1.stroke();
+                    circulo2.fillStyle = "black";
+                    circulo2.beginPath();
+                    circulo2.arc(234,305, 8 + 5 * Math.sin(tempo/500), 0, 2 * Math.PI);
+                    circulo2.fill();
+                    circulo2.lineWidth = 2;
+                    // circulo2.strokeStyle = "grey"; 
+                    circulo2.stroke();
+                    requestAnimationFrame(animarCirculo);
+                } 
+                requestAnimationFrame(animarCirculo);
+
+            }
+            
+        }
+        window.onload = desenhar;
+
+    </script>
+</head>
+<body>
+    <canvas id="tela" width="600" height="600">
+</body>
+</html>
